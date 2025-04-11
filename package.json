@@ -1,0 +1,25 @@
+{
+  "name": "capstone-docker-",
+  "version": "1.0.0",
+  "description": "This demo app shows a simple user profile app set up using \r - index.html with pure js and css styles\r - nodejs backend with express module\r - mongodb for data storage",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IshikaSahu441/capstone-docker-.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IshikaSahu441/capstone-docker-/issues"
+  },
+  "homepage": "https://github.com/IshikaSahu441/capstone-docker-#readme",
+  "dependencies": {
+    "body-parser": "^2.2.0",
+    "express": "^5.1.0",
+    "mongodb": "^6.15.0"
+  }
+}
