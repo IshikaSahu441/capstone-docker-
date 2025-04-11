@@ -2,7 +2,7 @@
   "name": "capstone-docker-",
   "version": "1.0.0",
   "description": "This demo app shows a simple user profile app set up using \r - index.html with pure js and css styles\r - nodejs backend with express module\r - mongodb for data storage",
-  "main": "index.js",
+  "main": "app/server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

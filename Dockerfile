@@ -1,7 +1,7 @@
 FROM node:20
 
 # Set working directory
-WORKDIR /home/app
+WORKDIR /app
 
 # Copy dependencies and install
 COPY app/package*.json ./
