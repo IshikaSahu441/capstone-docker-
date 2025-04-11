@@ -35,7 +35,7 @@ app.post('/update-profile', async (req, res) => {
   userObj.userid = 1;
 
   try {
-    const client = await MongoClient.connect(mongoUrlLocal, {
+    const client = await MongoClient.connect(mongoUrlDocker, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
@@ -58,7 +58,7 @@ app.post('/update-profile', async (req, res) => {
 // GET: Get Profile
 app.get('/get-profile', async (req, res) => {
   try {
-    const client = await MongoClient.connect(mongoUrlLocal, {
+    const client = await MongoClient.connect(mongoUrlDocker, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
