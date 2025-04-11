@@ -1,17 +1,10 @@
-FROM node:20
+FROM node:20-slim
 
-# Set working directory
-WORKDIR /home/app
-
-# Copy dependencies and install
+WORKDIR /app
 COPY app/package*.json ./
 RUN npm install
-
-# Copy the entire app folder contents
 COPY app/ .
 
-# Expose the port
-EXPOSE 3000
 
-# Start the app
+EXPOSE 3000
 CMD ["node", "server.js"]
