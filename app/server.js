@@ -11,9 +11,10 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-// Serve static files like index.html and images
-app.use(express.static(__dirname));
-
+// Serve index.html
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, "index.html"));
+});
 
 // Serve profile picture
 app.get('/profile-picture', (req, res) => {
