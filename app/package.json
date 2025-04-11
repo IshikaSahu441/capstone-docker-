@@ -1,7 +1,6 @@
 {
   "name": "developing-with-docker",
   "version": "1.0.0",
-  "description": "",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -12,8 +11,10 @@
   "dependencies": {
     "body-parser": "^1.20.3",
     "dotenv": "^16.5.0",
-    "express": "^4.17.1",
+    "express": "^4.21.2",
     "mongo": "^0.1.0",
-    "mongodb": "^5.8.0"
-  }
+    "mongodb": "^5.9.2"
+  },
+  "keywords": [],
+  "description": ""
 }
