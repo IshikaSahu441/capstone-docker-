@@ -23,9 +23,11 @@ app.get('/profile-picture', (req, res) => {
   res.end(img, 'binary');
 });
 
-// MongoDB Configuration
-const mongoUrl = process.env.MONGO_URL || "mongodb://localhost:27017";
-const databaseName = "my-db";
+let mongoUrlLocal = "mongodb://admin:password@localhost:27017";
+
+let mongoUrlDocker = "mongodb://admin:password@mongodb";
+
+let mongoClientOptions = { useNewUrlParser: true, useUnifiedTopology: true };const databaseName = "my-db";
 
 // POST: Update Profile
 app.post('/update-profile', async (req, res) => {
@@ -33,7 +35,7 @@ app.post('/update-profile', async (req, res) => {
   userObj.userid = 1;
 
   try {
-    const client = await MongoClient.connect(mongoUrl, {
+    const client = await MongoClient.connect(mongoUrlLocal, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
@@ -56,7 +58,7 @@ app.post('/update-profile', async (req, res) => {
 // GET: Get Profile
 app.get('/get-profile', async (req, res) => {
   try {
-    const client = await MongoClient.connect(mongoUrl, {
+    const client = await MongoClient.connect(mongoUrlLocal, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
