@@ -1,8 +1,16 @@
+version: '3.8'
+
 services:
   my-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
     image: my-app:1.0
     ports:
-    - 3000:3000
+      - 3000:3000
+    depends_on:
+      - mongodb
+
   mongodb:
     image: mongo
     container_name: mongodb
@@ -13,6 +21,7 @@ services:
       - MONGO_INITDB_ROOT_PASSWORD=password
     volumes:
       - mongo-data:/data/db
+
   mongo-express:
     image: mongo-express
     ports:
@@ -21,6 +30,9 @@ services:
       - ME_CONFIG_MONGODB_ADMINUSERNAME=admin
       - ME_CONFIG_MONGODB_ADMINPASSWORD=password
       - ME_CONFIG_MONGODB_SERVER=mongodb
+    depends_on:
+      - mongodb
+
 volumes:
   mongo-data:
     driver: local
